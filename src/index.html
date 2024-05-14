@@ -3,17 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/main.css" />
     <title>Homework 11</title>
   </head>
   <body>
     <section class="search">
       <div class="container">
-        <form class="search-form"></form>
-        <input type="text" placeholder="Search images..." />
-        <button type="submit">Search</button>
+        <form class="search-form">
+          <input class="js-input" type="text" name="searchQuery" placeholder="Search images..." />
+          <button class="js-btn" type="submit">Search</button>
+        </form>
       </div>
     </section>
-
+    <section class="js-gallery"></section>
+    <!-- <div class="card">
+      <img
+        src="https://pixabay.com/get/gf95f8c9046c9495884bf3ad0482adb333194cac8b8d9401fc104dfc3268367cf4de39ecd4fd727214014885c847149b3323b09ccd9e8b898d68c3eb551feec62_1280.jpg"
+        alt="book"
+        width="360"
+        height="200"
+      />
+      <ul class="card-list">
+        <ul>
+          Likes
+          <li>1813</li>
+        </ul>
+        <ul>
+          Views
+          <li>900290</li>
+        </ul>
+        <ul>
+          Comments
+          <li>229</li>
+        </ul>
+        <ul>
+          Downloads
+          <li>610937</li>
+        </ul>
+      </ul>
+    </div> -->
     <script type="module" src="./main.js"></script>
   </body>
 </html>
