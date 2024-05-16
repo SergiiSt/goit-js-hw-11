@@ -5,8 +5,8 @@ export const findPhotoByRequst = q => {
   const serchParams = new URLSearchParams({
     key: API_KEY,
     q,
-    image_type: photo,
-    orientation: horizontal,
+    image_type: 'all',
+    orientation: 'horizontal',
     safesearch: true,
   });
 
