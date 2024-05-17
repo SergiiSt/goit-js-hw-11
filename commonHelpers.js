@@ -1,27 +1,29 @@
-import"./assets/vendor-86291ea8.js";(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))l(e);new MutationObserver(e=>{for(const r of e)if(r.type==="childList")for(const i of r.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&l(i)}).observe(document,{childList:!0,subtree:!0});function s(e){const r={};return e.integrity&&(r.integrity=e.integrity),e.referrerPolicy&&(r.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?r.credentials="include":e.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function l(e){if(e.ep)return;e.ep=!0;const r=s(e);fetch(e.href,r)}})();const c="43847470-26a4b647964be33653231b3f4",u="https://pixabay.com/api/",a=o=>{const t=new URLSearchParams({key:c,q:o,image_type:"all",orientation:"horizontal",safesearch:!0});return fetch(`${u}?${t}`).then(s=>{if(!s.ok)throw new Error(s.statusText);return s.json()})},d=o=>o.map(t=>`<div class="card">
-      <img
-        src='${t.previewURL}'
-        alt="book"
+import{i as a,S as c}from"./assets/vendor-8c59ed88.js";(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))l(t);new MutationObserver(t=>{for(const o of t)if(o.type==="childList")for(const i of o.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&l(i)}).observe(document,{childList:!0,subtree:!0});function r(t){const o={};return t.integrity&&(o.integrity=t.integrity),t.referrerPolicy&&(o.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?o.credentials="include":t.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function l(t){if(t.ep)return;t.ep=!0;const o=r(t);fetch(t.href,o)}})();const u="43847470-26a4b647964be33653231b3f4",d="https://pixabay.com/api/",f=s=>{const e=new URLSearchParams({key:u,q:s,image_type:"all",orientation:"horizontal",safesearch:!0});return fetch(`${d}?${e}`).then(r=>{if(!r.ok)throw new Error(r.statusText);return r.json()})},h=s=>s.map(e=>`<div class="card">
+        <a href='${e.largeImageURL}'><img
+        src='${e.webformatURL}'
+        alt= '${e.tags}'
         width="360"
-        height="200"
-      />
+        height="152"
+      /></a>
+      <div>
       <ul class="card-list">
-        <ul>
+        <li>
           Likes
-          <li>'${t.likes}'</li>
-        </ul>
-        <ul>
+          ${e.likes}
+        </li>
+        <li>
           Views
-          <li>'${t.views}'</li>
-        </ul>
-        <ul>
+          ${e.views}
+        </li>
+        <li>
           Comments
-          <li>'${t.comments}'</li>
-        </ul>
-        <ul>
+        ${e.comments}
+        </li>
+        <li>
           Downloads
-          <li>'${t.downloads}'</li>
-        </ul>
+        ${e.downloads}
+        </li>
       </ul>
-    </div>`).join(" "),n=document.querySelector(".search-form"),f=document.querySelector(".js-gallery");n.reset();function m(o){o.preventDefault();const t=o.target.elements.searchQuery.value.trim();console.log(t),n.reset(),a(t).then(s=>{f.innerHTML=d(s.hits)})}n.addEventListener("submit",m);
+      </div>
+    </div>`).join(" "),n=document.querySelector(".search-form"),m=document.querySelector(".js-gallery");n.reset();function y(s){s.preventDefault();const e=s.target.elements.searchQuery.value.trim();console.log(e),n.reset(),f(e).then(r=>{console.log(r),r.total===0&&a.error({message:"Sorry, there are no images matching your search query. Please try again!",position:"topRight",color:"red"}),m.innerHTML=h(r.hits),new c(".js-gallery a",{captionsData:"alt",captionDelay:"250"})}).catch(r=>console.log(r)).finally(()=>{s.target.reset(),loaderEl.classList.add("is-hidden")})}n.addEventListener("submit",y);
 //# sourceMappingURL=commonHelpers.js.map
