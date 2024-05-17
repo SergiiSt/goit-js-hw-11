@@ -3,30 +3,32 @@ export const createGalleryItemMarcup = images => {
     .map(
       image =>
         `<div class="card">
-      <img
-        src='${image.previewURL}'
-        alt="book"
+        <a href='${image.largeImageURL}'><img
+        src='${image.webformatURL}'
+        alt= '${image.tags}'
         width="360"
-        height="200"
-      />
+        height="152"
+      /></a>
+      <div>
       <ul class="card-list">
-        <ul>
+        <li>
           Likes
-          <li>'${image.likes}'</li>
-        </ul>
-        <ul>
+          ${image.likes}
+        </li>
+        <li>
           Views
-          <li>'${image.views}'</li>
-        </ul>
-        <ul>
+          ${image.views}
+        </li>
+        <li>
           Comments
-          <li>'${image.comments}'</li>
-        </ul>
-        <ul>
+        ${image.comments}
+        </li>
+        <li>
           Downloads
-          <li>'${image.downloads}'</li>
-        </ul>
+        ${image.downloads}
+        </li>
       </ul>
+      </div>
     </div>`
     )
     .join(' ');
