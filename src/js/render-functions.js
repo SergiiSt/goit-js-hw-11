@@ -13,19 +13,19 @@ export const createGalleryItemMarcup = images => {
       <ul class="card-list">
         <li>
           Likes
-          ${image.likes}
+          <span>${image.likes}</span>
         </li>
         <li>
           Views
-          ${image.views}
+          <span>${image.views}</span>
         </li>
         <li>
           Comments
-        ${image.comments}
+          <span>${image.comments}</span>
         </li>
         <li>
           Downloads
-        ${image.downloads}
+          <span>${image.downloads}</span>
         </li>
       </ul>
       </div>

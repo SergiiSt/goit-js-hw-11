@@ -22,7 +22,7 @@
 }
 
 .js-input:focus {
-  border-color: #4E75FF;
+  border-color: #4e75ff;
   outline: none;
 }
 
@@ -39,14 +39,20 @@
 }
 
 .js-btn:hover {
-background-color: #6C8CFF;
+  background-color: #6c8cff;
 }
 
 .js-gallery {
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
-  padding-left: 33px;
+  padding-left: 185px;
+}
+
+li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .loader {
@@ -123,6 +129,7 @@ ul {
 }
 
 .card-list {
+  margin-top: 4px;
   display: flex;
   gap: 28px;
   list-style: none;
