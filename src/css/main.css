@@ -10,11 +10,20 @@
   width: 272px;
   max-height: 40px;
   border-radius: 4px;
-  border: 1px solid black;
+  border: 1px solid #808080;
 
   margin-right: 8px;
 
   font-size: 16px;
+}
+
+.js-input:hover {
+  border-color: #000000;
+}
+
+.js-input:focus {
+  border-color: #4E75FF;
+  outline: none;
 }
 
 .js-btn {
@@ -24,8 +33,13 @@
   background-color: blue;
   color: white;
   border: none;
+  cursor: pointer;
 
   font-size: 16px;
+}
+
+.js-btn:hover {
+background-color: #6C8CFF;
 }
 
 .js-gallery {
@@ -33,6 +47,59 @@
   flex-wrap: wrap;
   gap: 24px;
   padding-left: 33px;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  border: 3px solid;
+  border-color: #0ad63a #0ad63a transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  left: 44.5%;
+}
+
+.loader::after {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 3px solid;
+  border-color: transparent #ff3d00 #ff3d00;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  animation: rotationBack 0.5s linear infinite;
+  transform-origin: center center;
+}
+
+.is-hidden {
+  display: none;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
 }
 
 img {

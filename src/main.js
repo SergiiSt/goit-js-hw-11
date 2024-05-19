@@ -9,18 +9,27 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const searchFormEl = document.querySelector('.search-form');
 const galleryEl = document.querySelector('.js-gallery');
+const loaderEl = document.querySelector('.js-loader');
 
 searchFormEl.reset();
 
 function onSearchFormSubmit(event) {
   event.preventDefault();
   const searchReqest = event.target.elements.searchQuery.value.trim();
-  console.log(searchReqest);
-  searchFormEl.reset();
+  galleryEl.innerHTML = '';
+
+    if (!searchReqest) {
+      return iziToast.info({
+        message: 'The search field must not be empty',
+        position: 'topCenter',
+        timeout: 2500,
+      });
+    }
+
+  loaderEl.classList.remove('is-hidden');
 
   findPhotoByRequst(searchReqest)
-    .then(imagesData => {
-      console.log(imagesData);
+  .then(imagesData => {
       if (imagesData.total === 0) {
         iziToast.error({
           message:
@@ -29,6 +38,7 @@ function onSearchFormSubmit(event) {
           color: 'red',
         });
       }
+
       galleryEl.innerHTML = createGalleryItemMarcup(imagesData.hits);
       new SimpleLightbox('.js-gallery a', {
         captionsData: 'alt',
@@ -43,4 +53,3 @@ function onSearchFormSubmit(event) {
 }
 
 searchFormEl.addEventListener('submit', onSearchFormSubmit);
-
