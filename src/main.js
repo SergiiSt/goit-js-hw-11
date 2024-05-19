@@ -46,7 +46,7 @@ function onSearchFormSubmit(event) {
       });
     })
     .catch(error => console.log(error))
-    .finally(() => {
+    .finally(() =>  {
       event.target.reset();
       loaderEl.classList.add('is-hidden');
     });
